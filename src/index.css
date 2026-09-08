@@ -1,0 +1,244 @@
+@import 'leaflet/dist/leaflet.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0d0d0d;
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior: none;
+}
+
+/* Leaflet dark surface tweaks */
+.leaflet-container {
+  background: #0d0d0d !important;
+  font-family: 'Inter', sans-serif !important;
+  outline: none;
+}
+.leaflet-tile {
+  filter: brightness(0.92) contrast(1.05) saturate(0.85) hue-rotate(-6deg);
+}
+.leaflet-bar,
+.leaflet-control-attribution {
+  display: none !important;
+}
+.leaflet-control-zoom {
+  display: none !important;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
+}
+.leaflet-popup-close-button {
+  display: none !important;
+}
+.leaflet-popup-content-wrapper {
+  overflow: visible;
+}
+.leaflet-popup {
+  z-index: 1200 !important;
+}
+
+/* Hide horizontal scrollbar but keep scroll */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Thin custom scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 99px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Marker base */
+.spf-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Parking marker */
+.parking-marker {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  transform: translateZ(0);
+  transition: transform 0.18s ease;
+  cursor: pointer;
+}
+.parking-marker:hover {
+  transform: scale(1.06);
+}
+.parking-marker.is-selected {
+  transform: scale(1.14);
+}
+.parking-marker .pm-body {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px 5px 8px;
+  border-radius: 11px;
+  background: linear-gradient(180deg, #1f1f1f, #141414);
+  border: 1.5px solid #333;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.parking-marker.is-selected .pm-body {
+  border-color: #F5C518;
+  box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.25), 0 8px 22px rgba(0, 0, 0, 0.7);
+}
+.parking-marker .pm-p {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: #F5C518;
+  color: #111;
+  font-size: 11px;
+  font-weight: 900;
+}
+.parking-marker .pm-num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  min-width: 18px;
+  text-align: center;
+}
+.parking-marker .pm-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 99px;
+  margin-left: 2px;
+}
+.parking-marker .pm-tip {
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: #141414;
+  border-right: 1.5px solid #333;
+  border-bottom: 1.5px solid #333;
+}
+.parking-marker.is-selected .pm-tip {
+  border-color: #F5C518;
+}
+.pm-dot.green {
+  background: #22C55E;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.7);
+}
+.pm-dot.amber {
+  background: #F59E0B;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.7);
+}
+.pm-dot.red {
+  background: #EF4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.7);
+}
+
+/* GPS user marker */
+.gps-marker {
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+.gps-marker .gps-halo {
+  position: absolute;
+  inset: -6px;
+  border-radius: 99px;
+  background: rgba(59, 130, 246, 0.28);
+  animation: gps-pulse 2.4s ease-out infinite;
+}
+.gps-marker .gps-core {
+  position: absolute;
+  inset: 4px;
+  border-radius: 99px;
+  background: #3B82F6;
+  border: 2.5px solid #fff;
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.9);
+}
+.gps-marker .gps-label {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(13, 13, 13, 0.85);
+  color: #60A5FA;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 2px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+/* Number bump */
+.num-bump {
+  animation: num-bump 0.5s ease-out;
+}
+
+/* Range input styling */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 5px;
+  background: #333;
+  border-radius: 99px;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -6px;
+  height: 17px;
+  width: 17px;
+  border-radius: 99px;
+  background: #F5C518;
+  border: 2px solid #111;
+  box-shadow: 0 0 10px rgba(245, 197, 24, 0.5);
+}
