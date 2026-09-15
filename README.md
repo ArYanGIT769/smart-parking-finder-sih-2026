@@ -11,6 +11,13 @@
 
 SPF connects drivers with available parking and gives parking operators one view of occupancy, bookings, EV resources, accessible spaces and vehicle movement. The current Indore prototype proves the complete user and operator workflow; camera-driven occupancy, the Node.js API and persistent event storage are the next engineering slice.
 
+### 🎥 Watch our Smart Parking Finder Demonstration
+
+[![Smart Parking Finder Demo](https://raw.githubusercontent.com/ArYanGIT769/smart-parking-finder-sih-2026/main/SPF%20THUMBNAIL%20YT.png)](https://youtu.be/UevE1e0GRnU)
+
+
+
+  
 ## SIH 2026 registration
 
 | Field | Portal-aligned value |
