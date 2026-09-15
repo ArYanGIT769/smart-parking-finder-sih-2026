@@ -21,7 +21,7 @@ export default {
           red: '#EF4444',
           'red-coral': '#F87171',
           blue: '#3B82F6',
-          'blue-bright': '#60A5FA',
+          'blue-bright': '#G93A42',
         },
       },
       fontFamily: {
