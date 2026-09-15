@@ -13,7 +13,7 @@ SPF connects drivers with available parking and gives parking operators one view
 
 ### 🎥 Watch our Smart Parking Finder Demonstration
 
-[![Smart Parking Finder Demo](https://raw.githubusercontent.com/ArYanGIT769/smart-parking-finder-sih-2026/main/SPF%20THUMBNAIL%20YT.png)](https://youtu.be/UevE1e0GRnU)
+[![Smart Parking Finder Demo](https://raw.githubusercontent.com/ArYanGIT769/smart-parking-finder-sih-2026/main/SPF%20THUMBNAIL%20YT.png)](https://www.youtube.com/watch?v=UevEle0GRnU)
 
 
 
