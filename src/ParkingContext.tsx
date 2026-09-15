@@ -103,7 +103,7 @@ function saveState(state: PersistShape) {
   }
 }
 
-const VEHICLE_TYPES: VehicleType[] = ['Sedan', 'SUV', 'Hatchback', 'EV'];
+
 
 function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];

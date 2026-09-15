@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react';
 import { useParking } from '../ParkingContext';
 import { useNav } from '../NavContext';
-import { OwnerPinGate, isOwnerUnlocked, lockOwner } from '../components/OwnerPinGate';
-import type { ParkingFacility, MovementRecord, ActiveVehicle } from '../types';
+import { OwnerPinGate, isOwnerUnlocked} from '../components/OwnerPinGate';
+import type {MovementRecord} from '../types';
 import {
   LayoutDashboard,
   Radio,

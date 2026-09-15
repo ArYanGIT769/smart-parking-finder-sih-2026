@@ -9,7 +9,7 @@ import { Bookings } from './pages/Bookings';
 import { Owner } from './pages/Owner';
 
 function AppContent() {
-  const { view, selectedParkingId, navigate } = useNav();
+  const { view, selectedParkingId } = useNav();
 
   const isExplore = view === 'explore';
 

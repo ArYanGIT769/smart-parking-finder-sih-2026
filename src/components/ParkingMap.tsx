@@ -159,7 +159,7 @@ export function ParkingMap({
             click: () => onSelect(p.id),
           }}
         >
-          <PopupAdapter parking={p} selected={p.id === selectedId} onSelect={onSelect} content={popupContent} />
+          <PopupAdapter parking={p} onSelect={onSelect} content={popupContent} />
         </Marker>
       ))}
 
@@ -176,12 +176,12 @@ export function ParkingMap({
 
 function PopupAdapter({
   parking,
-  selected,
+
   onSelect,
   content,
 }: {
   parking: ParkingFacility;
-  selected: boolean;
+
   onSelect: (id: string) => void;
   content: (p: ParkingFacility) => ReactNode;
 }) {

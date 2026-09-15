@@ -153,7 +153,7 @@ function makeTransactions(seed: Seed): Transaction[] {
 
 export function createInitialParkingData(): ParkingFacility[] {
   return seeds.map((s) => {
-    const occupied = s.total - s.available;
+    
     return {
       id: s.id,
       name: s.name,

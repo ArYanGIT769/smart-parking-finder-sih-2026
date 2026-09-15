@@ -14,11 +14,10 @@ import {
   Clock,
   Shield,
   Navigation,
-  Check,
   Car,
-  X,
+  
   CheckCircle2,
-  Sparkles,
+  
 } from 'lucide-react';
 import { haversine, formatDistance, getOccupancyStatus, statusLabel, statusBg, formatCurrency } from '../utils';
 import { INDORE_CENTER } from '../types';

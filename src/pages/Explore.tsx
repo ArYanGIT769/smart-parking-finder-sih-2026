@@ -16,13 +16,11 @@ import {
   X,
   Star,
   MapPin,
-  Navigation,
-  ArrowRight,
-  ChevronRight,
+
 } from 'lucide-react';
 import type { ParkingFacility, FilterKey } from '../types';
 import { INDORE_CENTER } from '../types';
-import { haversine, formatDistance, getOccupancyStatus, statusLabel, statusBg } from '../utils';
+import { haversine, formatDistance } from '../utils';
 
 const FILTERS: { key: FilterKey; label: string; icon?: typeof Zap }[] = [
   { key: 'nearest', label: 'Nearest' },
@@ -90,7 +88,6 @@ export function Explore() {
     return result;
   }, [parkingsWithDist, activeFilters, searchQuery]);
 
-  const selectedParking = parkingsWithDist.find((p) => p.id === selectedId) ?? null;
 
   const handleSelect = useCallback((id: string) => {
     setSelectedId(id);

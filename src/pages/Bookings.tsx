@@ -17,9 +17,9 @@ import {
   CheckCircle2,
   XCircle,
   RotateCcw,
-  ArrowLeft,
+
 } from 'lucide-react';
-import { formatTimeShort, formatDate, formatCurrency, formatDurationFromMs } from '../utils';
+import { formatTimeShort, formatDate, formatCurrency} from '../utils';
 
 export function Bookings() {
   const { bookings, cancelBooking, getParking } = useParking();

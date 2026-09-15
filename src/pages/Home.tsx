@@ -4,7 +4,6 @@ import {
   MapPin,
   Zap,
   Accessibility,
-  Camera,
   Clock,
   Shield,
   Navigation,
