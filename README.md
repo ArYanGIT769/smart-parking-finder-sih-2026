@@ -162,16 +162,21 @@ npm run build
 
 ## Engineering roadmap
 
+**Done so far**
 - [x] Responsive driver and operator prototype
 - [x] Parking discovery, filtering, booking, QR and cancellation
 - [x] Shared facility state and interactive entry/exit simulation
 - [x] Public deployment and reproducible local build
-- [ ] Run YOLO inference on a sample gate video
-- [ ] Convert detections into validated `ENTRY` / `EXIT` events
-- [ ] Persist events through the Node.js API
-- [ ] Reconcile bookings and live occupancy atomically
-- [ ] Push updated availability to the driver and operator views
-- [ ] Pilot camera placement and low-connectivity fallback at one facility
+
+**Next up — camera + backend integration**
+- [ ] Phase 1 (Week 1): Run YOLO inference on sample gate footage from our own test parking lot
+- [ ] Phase 1 (Week 1): Convert detections into validated `ENTRY` / `EXIT` events
+- [ ] Phase 2 (Week 2): Stand up the Node.js API and persist events to a database
+- [ ] Phase 2 (Week 2): Reconcile live bookings against real-time occupancy without double-counting
+- [ ] Phase 3 (Week 3): Push live availability updates to the driver app and owner dashboard
+- [ ] Phase 3 (Week 3): Pilot camera placement at one real facility and test low-connectivity fallback
+
+We're prioritizing the camera → event pipeline first since it's the highest-risk technical piece; the API and UI integration are comparatively lower risk given the prototype already proves the full workflow.
 
 ## Team NEXUS MINDS
 
